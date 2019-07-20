@@ -3,11 +3,12 @@
 @import fonts.sass
 @import grid.sass
 @import '../../libs/fancybox/dist/jquery.fancybox.css'
+@import '../../libs/slick-carousel/slick/slick.css'
 
 
 /* Global settings */
 $font-size: 16px
-$font-family-1: 'Tahoma', sans-serif
+$font-family-1: 'HelveticaNeueCyr', sans-serif
 $color-1: #000
 
 
@@ -88,6 +89,23 @@ input, textarea, button
 	text-align: center
 	transition: .3s
 	background-color: transparent
+	&_red
+		color: #fff
+		background-color: #960c1c
+		&:hover
+			background-color: #c8a767
+	&_brown
+		color: #fff
+		background-color: #c8a767
+		&:hover
+			background-color: #960c1c
+	&_normal
+		font-size: 14px
+		height: 40px
+		padding: 0 16px
+		border-radius: 5px
+	&_fz-big
+		font-size: 20px
 
 .input input, .textarea textarea
 	transition: .3s
@@ -111,12 +129,295 @@ input, .btn, .slick-slide, textarea
 
 
 
+.icon
+	display: inline-block
+	vertical-align: middle
+
+
+
+
 .main-wrap
 	// overflow-x: hidden
 
 
 
+.header
+	z-index: 10
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
 
 
+.panel
+	background: url('../../img/bg/panel.png') no-repeat center top
+	min-height: 134px
+	&__nrk
+		margin-right: 35px
+
+	&__yniver
+		z-index: 1
+		margin-right: 35px
+		position: relative
+		top: 16px
+
+	&__phone
+		text-align: right
+		&-num
+			margin-bottom: 2px
+			i
+				margin-right: 10px
+			p
+				display: inline-block
+				vertical-align: middle
+				font-size: 22px
+				font-weight: 700
+		&-desc
+			font-size: 14px
+			color: #666666
+
+	&__phone
+		margin-left: auto
+
+	&__btn
+		width: 280px
+		margin-left: 20px
+
+
+.nav
+	color: #fff
+	background-color: #0b2d50
+	padding-top: 11px
+	padding-bottom: 12px
+	&__list
+		padding-left: 325px
+		ul
+			justify-content: flex-end
+		li
+			font-size: 20px
+			margin-left: 130px
+			&:first-of-type
+				margin-left: 0
+		a
+			color: #fff
+			&:hover
+				border-color: #fff
+
+
+
+.main
+	padding-top: 174px
+
+.slider
+	&__list
+		font-size: 0
+		
+		.slick-slide
+			width: 1180px
+	&__item
+		height: 320px
+		position: relative
+	&__img, &__blur
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-repeat: no-repeat
+		background-position: center left
+		background-size: cover
+	&__img
+		z-index: 1
+	&__blur
+		z-index: 2
+		filter: blur(3px)
+		width: 515px
+	&__content
+		z-index: 3
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 50%
+		width: 515px
+		padding: 26px 80px 0 110px
+		transform: translateX(-100%)
+		margin-left: -75px
+	&__title, &__desc
+		color: #fff
+	&__title
+		font-size: 30px
+		font-weight: 700
+		margin-bottom: 6px
+	&__desc
+		font-size: 18px
+		font-weight: 300
+		line-height: 24px
+		margin-bottom: 28px
+	&__btn
+		width: 260px
+
+	&__nav
+		z-index: 1
+		position: relative
+		background-color: #fff
+		border-bottom: 10px solid #0b2d50
+		.slick-list
+			padding: 0 !important
+		.slick-track
+			transform: none !important
+			width: 100% !important
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			justify-content: center
+			&:before, &:after
+				display: none
+		.slick-slide
+			width: 193px
+		.slick-current
+			.slider__nav-item
+				&:before, &:after
+					opacity: 1
+				span
+					color: #fff
+		&-item
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			justify-content: center
+			text-align: center
+			font-size: 16px
+			line-height: 18px
+			position: relative
+			height: 62px
+			padding-top: 14px
+			cursor: pointer
+			&:before
+				z-index: 1
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				position: absolute
+				content: ''
+				transform: skewX(-20deg)
+				background-color: #960c1c
+				opacity: 0
+				transition: .3s
+			&:after
+				z-index: 2
+				content: ''
+				top: 7px
+				left: 20px
+				right: 0px
+				height: 1px
+				position: absolute
+				background-color: #fff
+				opacity: 0
+				transition: .3s
+			span
+				z-index: 3
+				position: relative
+				// color: #fff
+
+
+
+
+.page
+	background: url('../../img/bg/page.png') no-repeat center top
+	&__wrap
+		padding: 50px 60px 70px
+		background-color: #ebebeb
+
+
+.afisha
+	&__list
+		margin-left: -10px
+		margin-right: -10px
+		margin-bottom: -30px
+	&__item
+		width: calc(50% - 20px)
+		margin-left: 10px
+		margin-right: 10px
+		margin-bottom: 30px
+	&__img
+		display: block
+		height: 335px
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		margin-bottom: 14px
+	&__title
+		a
+			&:hover
+				border-color: $color-1
+
+
+
+
+.footer
+	padding-bottom: 470px
+	background: url('../../img/bg/foot-bottom.png') no-repeat center bottom
+	&__wrap
+		color: #fff
+		background-color: #0b2d50
+		border-radius: 3px
+		a
+			color: #fff
+	&__body
+		padding: 20px
+
+	&__logo
+		width: 92px
+		margin-right: 85px
+
+	&__nav
+		width: 390px
+		li
+			width: 50%
+			font-size: 14px
+			margin-bottom: 9px
+		a
+			border-color: #fff
+			&:hover
+				border-color: transparent
+
+	&__address
+		i
+			margin-right: 9px
+		p
+			font-size: 14px
+			display: inline-block
+			vertical-align: middle
+	
+	&__call
+		width: 270px
+		text-align: right
+		margin-left: auto
+
+	&__phone
+		margin-bottom: 12px
+		&-num
+			i
+				margin-right: 9px
+				position: relative
+				top: -1px
+			p
+				font-size: 22px
+				font-weight: 700
+				display: inline-block
+				vertical-align: middle
+		&-desc
+			font-size: 14px
+
+	&__foot
+		padding: 28px 30px 27px
+		border-top: 1px solid rgba(255,255,255,.5)
+	&__copy
+		font-size: 14px
+		text-align: center
+		a
+			&:hover
+				border-color: #fff
 .hidden-lg
 	display: none
