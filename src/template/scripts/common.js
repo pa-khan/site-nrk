@@ -11,8 +11,21 @@ $(document).ready(function($) {
 		arrows: false,
 		variableWidth: true,
 		asNavFor: sliderNav,
-		infinite: false,
-		initialSlide: 3
+		infinite: true,
+		initialSlide: 3,
+		responsive: [{
+			breakpoint: 1230,
+			settings: {
+				centerMode: false,
+				variableWidth: false,
+			}}, {
+			breakpoint: 992,
+			settings: {
+				centerMode: false,
+				variableWidth: false,
+				arrows: true
+			}
+		}]
 	})
 
 	sliderNav.slick({
@@ -24,4 +37,14 @@ $(document).ready(function($) {
 		focusOnSelect: true,
 		initialSlide: 3
 	})
+
+
+
+	// $('.slider__nav .slick-slide').hover(function() {
+	// 	var attr = Number($(this).attr('data-slick-index'));
+	// 	sliderNav.slick('slickGoTo', attr, true);
+	// 	sliderList.slick('slickGoTo', attr, true);
+	// 	console.log(attr)
+	// })
+
 });

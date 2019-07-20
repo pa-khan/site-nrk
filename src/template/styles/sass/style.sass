@@ -3,7 +3,8 @@
 @import fonts.sass
 @import grid.sass
 @import '../../libs/fancybox/dist/jquery.fancybox.css'
-@import '../../libs/slick-carousel/slick/slick.css'
+@import ../../libs/slick-carousel/slick/slick.css
+@import ../../libs/slick-carousel/slick/slick-theme.css
 
 
 /* Global settings */
@@ -176,7 +177,7 @@ input, .btn, .slick-slide, textarea
 			font-size: 14px
 			color: #666666
 
-	&__phone
+	&__call
 		margin-left: auto
 
 	&__btn
@@ -214,24 +215,48 @@ input, .btn, .slick-slide, textarea
 		
 		.slick-slide
 			width: 1180px
+		.slick-current
+			.slider
+				&__item
+					&:before
+						z-index: 3
+						// opacity: 0
+						// visibility: hidden
+						background-color: rgba(0, 0, 0, 0.2)
+				&__content
+					
 	&__item
 		height: 320px
 		position: relative
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			transition: .3s
+			z-index: 4
+			background-color: rgba(0, 0, 0, 0.6)
+		
 	&__img, &__blur
 		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
+		top: -5px
+		left: -5px
+		right: -5px
+		bottom: -5px
 		background-repeat: no-repeat
-		background-position: center left
+		background-position: center
 		background-size: cover
 	&__img
-		z-index: 1
-	&__blur
 		z-index: 2
+		width: 560px
+		left: 520px
+		right: auto
+	&__blur
+		z-index: 1
 		filter: blur(3px)
-		width: 515px
+		// width: 515px
 	&__content
 		z-index: 3
 		position: absolute
@@ -242,7 +267,6 @@ input, .btn, .slick-slide, textarea
 		padding: 26px 80px 0 110px
 		transform: translateX(-100%)
 		margin-left: -75px
-	&__title, &__desc
 		color: #fff
 	&__title
 		font-size: 30px
@@ -273,7 +297,7 @@ input, .btn, .slick-slide, textarea
 			&:before, &:after
 				display: none
 		.slick-slide
-			width: 193px
+			width: 172px
 		.slick-current
 			.slider__nav-item
 				&:before, &:after
@@ -319,7 +343,11 @@ input, .btn, .slick-slide, textarea
 				z-index: 3
 				position: relative
 				// color: #fff
-
+			&:hover
+				&:before, &:after
+					opacity: 1
+				span
+					color: #fff
 
 
 
